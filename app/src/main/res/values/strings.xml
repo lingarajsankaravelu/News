@@ -1,0 +1,5 @@
+<resources>
+  <string name="app_name">Base</string>
+  <string name="message_common_loading">Loading</string>
+  <string name="error_message_common">Please Try again!</string>
+</resources>
