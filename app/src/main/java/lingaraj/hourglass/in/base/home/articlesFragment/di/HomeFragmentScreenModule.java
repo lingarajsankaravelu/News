@@ -1,4 +1,4 @@
-package lingaraj.hourglass.in.base.home.fragment.di;
+package lingaraj.hourglass.in.base.home.articlesFragment.di;
 
 import dagger.Binds;
 import dagger.Module;

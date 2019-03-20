@@ -10,8 +10,11 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 import java.util.Map;
+import javax.inject.Named;
 import javax.inject.Provider;
-import lingaraj.hourglass.in.base.home.fragment.di.HomeFragmentViewModel;
+import lingaraj.hourglass.in.base.di.Names;
+import lingaraj.hourglass.in.base.home.articlesFragment.ArticleFragmentRepository;
+import lingaraj.hourglass.in.base.home.articlesFragment.ArticlesViewModel;
 
 /**
  * All view models binded to dagger here
@@ -35,8 +38,8 @@ public class AppViewModelsModule {
 
   @Provides
   @IntoMap
-  @ViewModelKey(HomeFragmentViewModel.class)
-  ViewModel providesHomeFragmentViewModel() {
-    return new HomeFragmentViewModel();
+  @ViewModelKey(ArticlesViewModel.class)
+  ViewModel providesHomeFragmentViewModel(ArticleFragmentRepository repository,@Named(Names.NAMED_ERROR_COMMON) String errorCommon) {
+    return new ArticlesViewModel(repository,errorCommon);
   }
 }

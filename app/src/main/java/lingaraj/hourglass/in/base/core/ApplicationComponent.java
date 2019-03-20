@@ -4,6 +4,7 @@ import dagger.Component;
 import javax.inject.Singleton;
 import lingaraj.hourglass.in.base.BaseApp;
 import lingaraj.hourglass.in.base.api.di.APIModule;
+import lingaraj.hourglass.in.base.database.DatabaseModule;
 
 /**
  * All singleton Modules goes here i.e application,ActivityBindingModule, database and network module
@@ -12,7 +13,9 @@ import lingaraj.hourglass.in.base.api.di.APIModule;
 @Component(modules = {
         ApplicationModule.class,
         ActivityBindingModule.class,
-     NetworkModule.class,APIModule.class
+    DatabaseModule.class,
+     NetworkModule.class,
+    APIModule.class
 
 })
 public interface ApplicationComponent {

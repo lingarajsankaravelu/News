@@ -61,64 +61,18 @@ public class DefaultScreenNavigator extends ActivityLifecycleTask implements Scr
     }
 
 
-    @Override
-    public void goToRegister() {
-      }
-
-    @Override
-    public void goToLogin() {
-     }
 
 
     @Override
     public void loadFragments(Fragment activeFragment, List<Fragment> hiddenFragmentList) {
        }
 
-    @Override
-    public void goToBookExplorePage() {
-     }
-
-    @Override
-    public void goToTopicExplorePage() {
-        }
-
-    @Override
-    public void openPostQuestionPage() {
-    }
-
-    @Override
-    public void openPracticePage() {
-    }
-
-    @Override
-    public void openRevisionScreen(String revisionId) {
-      }
-
-    @Override
-    public void openChapterDetails() {
-     }
-
-    @Override
-    public void searchText(String searchString) {
-    }
-
-    @Override
-    public void openSearch() {
-        }
-
-
-    @Override
-    public void openYoutubePlayActivity(String videoId) {
-     }
 
     @Override
     public void showFragment(Fragment active, Fragment tobeShown) {
      }
 
 
-    @Override
-    public void goHome() {
-      }
 
 
 }
