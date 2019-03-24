@@ -115,22 +115,19 @@ public class ArticlesFragment extends BaseFragment {
 
   public void showLoader(){
     loader.setVisibility(View.VISIBLE);
+    retry_container.setVisibility(View.GONE);
+    mrecyclerview.setVisibility(View.INVISIBLE);
     Timber.d("Loader Shown");
   }
 
   public void hideLoader(){
     loader.setVisibility(View.GONE);
+    retry_container.setVisibility(View.GONE);
+
     Timber.d("Loader hidden");
   }
 
-  public void showRetry(){
-    retry_container.setVisibility(View.VISIBLE);
-    Timber.d("Showing retry");
-  }
 
-  public void hideRetry(){
-    retry_container.setVisibility(View.GONE);
-  }
   public void showError(@Nullable String message){
      hideLoader();
      if (message==null){
@@ -153,7 +150,6 @@ public class ArticlesFragment extends BaseFragment {
      Timber.d("Item Clicked");
      int position = mrecyclerview.getChildAdapterPosition(v);
      String url = madapter.getWebLink(position);
-
      navigator.showFragment(WebLinkPreviewFragment.newInstance(url),WebLinkPreviewFragment.BACKSTACK_TAG);
 
     }
@@ -161,6 +157,7 @@ public class ArticlesFragment extends BaseFragment {
 
   @OnClick(R.id.retry_view)
   public void retryClick(){
+    showLoader();
     view_model.refresh();
   }
 }
