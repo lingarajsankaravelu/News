@@ -57,6 +57,7 @@ ext {
     cropViewVersion = '1.1.8'
     glideVersion = '4.8.0'
     multidexVersion = '1.0.3'
+     mockitoVersion = '2.10.0'
 }
 
 task clean(type: Delete) {

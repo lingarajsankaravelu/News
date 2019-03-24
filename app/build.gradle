@@ -86,6 +86,8 @@ dependencies {
     // Warning: Don't update simplepass loading-button version as future versions are not compatible
     implementation "br.com.simplepass:loading-button-android:$loadingButtonVersion"
 
+    testImplementation "android.arch.core:core-testing:$archComponentsVersion"
+    testImplementation "org.mockito:mockito-core:$mockitoVersion"
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
