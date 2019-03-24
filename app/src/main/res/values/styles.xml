@@ -8,4 +8,19 @@
     <item name="colorAccent">@color/colorAccent</item>
   </style>
 
+  <style name="RetryButton" parent="Widget.AppCompat.Button.Colored">
+    <item name="android:layout_height">60dp</item>
+    <item name="android:layout_width">100dp</item>
+    <item name="colorButtonNormal">@color/colorPrimary</item>
+    <item name="android:layout_gravity">center</item>
+    <item name="android:text">"Retry"</item>
+    <item name="android:textAllCaps">false</item>
+    <item name="android:visibility">gone</item>
+    <item name="android:textSize">@dimen/auth_edit_text_size</item>
+    <item name="android:paddingTop">@dimen/auth_button_text_padding</item>
+    <item name="android:paddingBottom">@dimen/auth_button_text_padding</item>
+    <item name="android:layout_marginTop">@dimen/auth_input_margin_top</item>
+  </style>
+
+
 </resources>

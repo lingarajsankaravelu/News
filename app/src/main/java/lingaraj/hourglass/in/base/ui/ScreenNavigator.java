@@ -12,7 +12,7 @@ public interface ScreenNavigator {
 
     void finish();
 
-    void showFragment(Fragment active, Fragment tobeHidden);
+    void showFragment(Fragment tobeHidden,String fragmentTag);
 
     void loadFragments(Fragment activeFragment, List<Fragment> hiddenFragmentList);
 

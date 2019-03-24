@@ -1,5 +1,8 @@
 <resources>
   <string name="app_name">Base</string>
-  <string name="message_common_loading">Loading</string>
+  <string name="message_common_loading">Getting things for you</string>
   <string name="error_message_common">Please Try again!</string>
+  <string name="dummy_title">Milan reportedly frightened by Richarlisons high price</string>
+  <string name="dummy_author">Lingaraj</string>
+  <string name="hour">%1d h</string>
 </resources>

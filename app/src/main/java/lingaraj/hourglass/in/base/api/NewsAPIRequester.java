@@ -17,6 +17,6 @@ public class NewsAPIRequester {
   }
 
   public Single<NewsResponse> getArticles(){
-    return router.getResults(Constants.COUNTRY_INDIA,Constants.API_KEY);
+    return router.getResults(Constants.COUNTRY_INDIA,Constants.API_KEY).doOnError(error->{});
   }
 }

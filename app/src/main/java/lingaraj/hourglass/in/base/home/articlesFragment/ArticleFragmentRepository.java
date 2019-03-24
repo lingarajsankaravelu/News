@@ -1,5 +1,6 @@
 package lingaraj.hourglass.in.base.home.articlesFragment;
 
+import android.arch.lifecycle.LiveData;
 import android.arch.lifecycle.MutableLiveData;
 import io.reactivex.Completable;
 import io.reactivex.Single;
@@ -26,12 +27,12 @@ public class ArticleFragmentRepository {
   }
 
 
-  MutableLiveData<List<Article>> getArticles(){
+  LiveData<List<Article>> getArticles(){
     return database.articlesDao().getArticles();
   }
 
 
-  Single<NewsResponse> refreshArticles(){
+  Single<NewsResponse> refreshArticles() {
      return api_requester.get().getArticles().subscribeOn(Schedulers.io()).map(newsResponse -> {
        if (newsResponse!=null && newsResponse.getArticles().size()>0){ ;
          Completable.fromAction(new Action() {

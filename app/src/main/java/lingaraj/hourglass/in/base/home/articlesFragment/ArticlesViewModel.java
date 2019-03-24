@@ -6,10 +6,10 @@ import android.arch.lifecycle.MutableLiveData;
 import android.arch.lifecycle.ViewModel;
 import io.reactivex.schedulers.Schedulers;
 import java.util.List;
-import javax.inject.Inject;
 import javax.inject.Named;
 import lingaraj.hourglass.in.base.database.Article;
 import lingaraj.hourglass.in.base.di.Names;
+import timber.log.Timber;
 
 public class ArticlesViewModel extends ViewModel {
 
@@ -41,13 +41,16 @@ public class ArticlesViewModel extends ViewModel {
 
   @SuppressLint("CheckResult")
   public void refresh(){
-    repository.refreshArticles()
-        .subscribeOn(Schedulers.io())
-        .doOnSubscribe(__->loader.postValue(true))
-        .doOnError(__->error.postValue(common_error_response))
-        .doOnSuccess(__->loader.postValue(false))
-        .subscribe();
-  }
+      repository.refreshArticles()
+          .subscribeOn(Schedulers.io())
+          .doOnSubscribe(__->loader.postValue(true))
+          .doOnError(__->error.postValue(common_error_response))
+          .doOnSuccess(__->loader.postValue(false))
+          .subscribe(newsResponse -> {Timber.d("Obtained Response");},throwable->{
+            Timber.d(throwable.toString());
+             error.postValue(common_error_response);
+          });
+   }
 
 
 

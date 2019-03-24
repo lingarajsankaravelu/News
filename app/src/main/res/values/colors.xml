@@ -3,4 +3,29 @@
   <color name="colorPrimary">#008577</color>
   <color name="colorPrimaryDark">#00574B</color>
   <color name="colorAccent">#D81B60</color>
+
+  <color name="colorAccentLight">#77009688</color>
+  <color name="colorAccentPink">#FF4081</color>
+  <!--<color name="colorAccent">#442C2E</color>-->
+  <color name="text_dark_blue">#334E70</color>
+  <!--<color name="colorButtons">#63CCC8</color>-->
+  <color name="colorButtons">#63CCC8</color>
+  <color name="app_background">#F1F1F2</color>
+  <color name="app_blue">#63CCC8</color>
+  <color name="dark_app_blue">#59B8B4</color>
+  <color name="icon_blue">#00ACC1</color>
+  <color name="white">#FFFFFF</color>
+  <color name="beige_background">#EEE7E0</color>
+  <color name="grey_100">#F5F5F5</color>
+  <color name="grey_350">#c9c9c9</color>
+  <color name="icon_black">#262626</color>
+  <color name="icon_grey">#C7C7C7</color>
+
+
+  <color name="colorTextDefault">#616161</color>
+  <color name="colorTextDefaultLight">#9E9E9E</color>
+  <color name="colorError">#F44336</color>
+  <color name="editTextHint">#616161</color>
+  <color name="controlColorNormal">#757575</color>
+
 </resources>

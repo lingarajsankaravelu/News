@@ -1,18 +1,73 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout
+<android.support.design.widget.CoordinatorLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/white"
     android:id="@+id/screen_container"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    >
+  <FrameLayout
+      android:layout_width="match_parent"
+      android:layout_height="match_parent">
 
-  <TextView
-      android:layout_width="wrap_content"
+    <android.support.v7.widget.RecyclerView
+        tools:listitem="@layout/card_default"
+        android:visibility="invisible"
+        android:id="@+id/articles"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        />
+
+    <LinearLayout
+        android:id="@+id/retry_container"
+        android:orientation="vertical"
+        android:visibility="gone"
+        android:layout_gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+      <ImageView
+          android:layout_height="48dp"
+          android:layout_width="48dp"
+          android:scaleType="fitXY"
+          android:id="@+id/retry_view"
+          android:layout_gravity="center_horizontal"
+          app:srcCompat="@drawable/ic_refresh"
+          />
+      <TextView
+          android:layout_marginTop="8dp"
+          android:layout_marginBottom="8dp"
+          android:id="@+id/message"
+          android:layout_width="wrap_content"
+          android:layout_height="match_parent"
+          android:layout_gravity="center"
+          android:layout_margin="4dp"
+          android:padding="2dp"
+          android:text="@string/message_common_loading"
+          android:textColor="@color/colorAccent"
+          android:textSize="@dimen/message_size"
+          />
+
+
+    </LinearLayout>
+
+
+  </FrameLayout>
+
+  <ProgressBar
+
+      android:layout_gravity="bottom"
+      android:layout_margin="4dp"
+      android:visibility="visible"
+      android:layout_width="match_parent"
+      android:indeterminate="true"
+      android:id="@+id/loader"
       android:layout_height="wrap_content"
-      android:text="@string/message_common_loading"
-      android:layout_gravity="center"
-      android:textColor="@color/colorAccent"
+      style="@style/Widget.AppCompat.ProgressBar.Horizontal"
       />
 
 
 
-</FrameLayout>
+</android.support.design.widget.CoordinatorLayout>
