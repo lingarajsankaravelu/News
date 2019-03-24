@@ -62,7 +62,7 @@ public class ArticlesAdapter extends RecyclerView.Adapter<ArticlesAdapter.ViewHo
      }
      else {
        holder.hour.setText(mContext.getString(R.string.hour, General.getHourDifference(time_stamp)));
-       holder.hour.setVisibility(View.VISIBLE);
+       holder.hour.setVisibility(View.INVISIBLE);
      }
     if (holder.getItemViewType()==TYPE_NEWS_DEFAULT){
       dimension = 50;
@@ -94,40 +94,10 @@ public class ArticlesAdapter extends RecyclerView.Adapter<ArticlesAdapter.ViewHo
             // Try again online if cache failed
             Picasso.with(mContext)
                 .load(Uri.parse(url))
-               /// .placeholder(R.drawable.user_placeholder)
-              //  .error(R.drawable.user_placeholder_error)
                 .into(holder.image_view);
           }
         });
-   /* Target target = new Target() {
-      @Override
-      public void onBitmapLoaded(final Bitmap bitmap, Picasso.LoadedFrom from) {
-        Timber.d("Downloaded");
-        Article record = articles.get(holder.getAdapterPosition());
-        saveBitmap(bitmap,record.getUrlToImage());
-        holder.image_view.setImageBitmap(bitmap);
-      }
 
-      @Override
-      public void onBitmapFailed(Drawable errorDrawable) {
-        Timber.d("Bitmap loading error:");
-      }
-
-      @Override
-      public void onPrepareLoad(Drawable placeHolderDrawable) {
-        Timber.d("On prepare load");
-      }
-    };
-    Picasso.Builder builder = new Picasso.Builder(mContext);
-    builder.listener(new Picasso.Listener() {
-      @Override
-      public void onImageLoadFailed(Picasso picasso, Uri uri, Exception exception) {
-        Timber.d("Image Load Failed"+exception.toString());
-      }
-    });
-
-    builder.build().load(picasso_url).resize(dimension,dimension).into(target);
-    holder.image_view.setTag(target);*/
   }
 
   private void saveBitmap(Bitmap bitmap, String urlToImage) {
